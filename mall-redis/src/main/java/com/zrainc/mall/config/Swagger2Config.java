@@ -1,5 +1,7 @@
 package com.zrainc.mall.config;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -27,7 +29,7 @@ public class Swagger2Config {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包下controller生成API文档
-                .apis(RequestHandlerSelectors.basePackage("com.macro.mall.tiny.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.zrainc.mall.controller"))
                 //为有@Api注解的Controller生成API文档
 //                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 //为有@ApiOperation注解的方法生成API文档
@@ -40,7 +42,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("SwaggerUI演示")
                 .description("mall-tiny")
-                .contact("macro")
+                .contact("zrainc")
                 .version("1.0")
                 .build();
     }
